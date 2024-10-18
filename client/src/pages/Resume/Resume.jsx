@@ -11,14 +11,14 @@ const Resume = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-inherit mt-[100px] p-5">
+    <div className=" mt-20 flex flex-col items-center justify-center min-h-screen bg-inherit p-4 sm:p-6 md:p-8 lg:p-10 xl:p-12 ">
       {/* Responsive Resume Viewer */}
-      <div className="w-full max-w-[90%] lg:max-w-4xl h-[75vh] md:h-[850px] bg-white shadow-lg rounded-lg overflow-hidden">
+      <div className="w-full max-w-[95vw] sm:max-w-[85vw] md:max-w-[75vw] lg:max-w-[60vw] h-[100vh] sm:h-[70vh] md:h-[80vh] lg:h-[85vh] bg-white shadow-xl rounded-lg overflow-hidden">
         <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.11.174/build/pdf.worker.min.js">
           <Viewer
             fileUrl="/New_Resume.pdf"
             defaultScale={SpecialZoomLevel.PageFit}
-            className="w-full h-full  border-none shadow"
+            className="w-full h-full border-none"
           />
         </Worker>
       </div>
@@ -26,7 +26,7 @@ const Resume = () => {
       {/* Download button with responsive styling */}
       <button
         onClick={handleDownload}
-        className="mt-6 bg-yellow-400 text-black font-semibold py-2 px-6 rounded-lg shadow-lg hover:bg-yellow-500 transition-all ease-in-out duration-300 text-sm md:text-base lg:text-lg"
+        className="mt-6 bg-yellow-400 text-black font-semibold py-2 px-4 sm:px-6 md:px-8 lg:px-10 rounded-md shadow-lg hover:bg-yellow-500 transition-transform transform hover:scale-105 duration-300 text-sm sm:text-base md:text-lg"
       >
         Download Resume
       </button>

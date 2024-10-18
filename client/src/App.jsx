@@ -22,7 +22,7 @@ const App = () => {
   }, []);
 
   return (
-    <div className="bg-cover-image flex flex-col justify-between items-center  bg-transparent">
+    <div className="bg-cover-image flex flex-col justify-between   bg-transparent">
       <PreLoader load={load} />
       <ScrollToTop />
       <Header className="z-20" />

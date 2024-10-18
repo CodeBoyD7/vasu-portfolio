@@ -12,10 +12,7 @@ function Projects() {
 
   const fetchProjects = useCallback(async () => {
     try {
-      const { data } = await axios.get(
-        `${import.meta.env.VITE_API_URL}getProjects` ||
-          "http://localhost:3000/getProjects"
-      );
+      const { data } = await axios.get("http://localhost:3000/getProjects");
 
       const projectData = data.projects.data;
 

@@ -8,10 +8,11 @@ dotenv.config();
 const app = express();
 app.use(
   cors({
-    origin: "*",
-    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-    preflightContinue: false,
-    optionsSuccessStatus: 204,
+    origin: [
+      "http://localhost:3000",
+      "http://localhost:5173",
+      "https://vasu-portfolio.onrender.com",
+    ],
   })
 );
 app.use(express.json());

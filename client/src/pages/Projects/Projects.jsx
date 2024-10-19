@@ -12,7 +12,9 @@ function Projects() {
 
   const fetchProjects = useCallback(async () => {
     try {
-      const { data } = await axios.get("http://localhost:3000/getProjects");
+      const { data } = await axios.get(
+        "https://vasu-portfolio.onrender.com/getProjects"
+      );
 
       const projectData = data.projects.data;
 

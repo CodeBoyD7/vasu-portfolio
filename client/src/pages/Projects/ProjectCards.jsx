@@ -11,7 +11,7 @@ function ProjectCards({
   isBlog,
 }) {
   return (
-    <div className="flex flex-col bg-gray-800 rounded-lg shadow-lg overflow-hidden transition-transform transform hover:scale-105">
+    <div className=" w-[300px] flex flex-col bg-gray-800 rounded-lg shadow-lg overflow-hidden transition-transform transform hover:scale-105">
       {/* Image container */}
       <div className="image-container mb-4">
         <img

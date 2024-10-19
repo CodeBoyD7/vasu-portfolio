@@ -13,7 +13,8 @@ function Projects() {
   const fetchProjects = useCallback(async () => {
     try {
       const { data } = await axios.get(
-        "https://vasu-portfolio.onrender.com/getProjects"
+        "https://vasu-portfolio.onrender.com/getProjects" ||
+          "http://localhost:3000/getProjects"
       );
 
       const projectData = data.projects.data;
@@ -52,7 +53,8 @@ function Projects() {
   const filteredProjects = projects.filter(
     (project) =>
       filteredSkills.length === 0 ||
-      project.technologies.every((tech) => filteredSkills.includes(tech))
+      (project.technologies.every((tech) => filteredSkills.includes(tech)) &&
+        filteredSkills.every((skill) => project.technologies.includes(skill)))
   );
 
   if (loading) {
@@ -94,7 +96,7 @@ function Projects() {
               key={skill}
               onClick={() => handleSkillChange(skill)}
               className={`m-2 px-4 py-2 rounded-full text-sm font-semibold transition duration-300 sm:text-base ${
-                !filteredSkills.includes(skill)
+                filteredSkills.includes(skill)
                   ? "bg-purple-600 text-white"
                   : "bg-gray-700 text-gray-300 hover:bg-purple-500 hover:text-white"
               }`}

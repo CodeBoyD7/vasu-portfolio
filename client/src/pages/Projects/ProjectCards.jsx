@@ -11,9 +11,9 @@ function ProjectCards({
   isBlog,
 }) {
   return (
-    <div className=" w-[300px] flex flex-col bg-gray-800 rounded-lg shadow-lg overflow-hidden transition-transform transform hover:scale-105">
+    <div className="flex p-4 flex-col w-full sm:w-[320px] md:w-[350px] lg:w-[400px] overflow-hidden h-[450px] bg-gray-800 rounded-lg shadow-xl transition-all duration-300 transform hover:scale-105">
       {/* Image container */}
-      <div className="image-container mb-4">
+      <div className="mb-4 rounded-lg overflow-hidden">
         <img
           className="w-full h-48 sm:h-56 object-cover transition-all duration-300 hover:opacity-90"
           src={imgPath}
@@ -23,15 +23,15 @@ function ProjectCards({
 
       {/* Project details */}
       <div className="flex flex-col p-4">
-        <h3 className="text-xl sm:text-2xl font-semibold text-white mb-2">
-          {title}
-        </h3>
-        <p className="text-base text-gray-400 text-justify mb-4 flex-grow">
-          {description}
+        <h3 className="text-2xl font-semibold text-white mb-2">{title}</h3>
+        <p className="text-sm text-gray-300 text-justify mb-4 flex-grow">
+          {description.length > 100
+            ? `${description.slice(0, 100)}...`
+            : description}
         </p>
 
         {/* Action buttons (GitHub and Demo) */}
-        <div className="flex flex-col sm:flex-row gap-4">
+        <div className="flex flex-wrap gap-3">
           <a
             href={ghLink}
             target="_blank"

@@ -2,6 +2,16 @@ import { useEffect } from "react";
 
 const CursorHandler = ({ children }) => {
   useEffect(() => {
+    // Check if the device supports hover (indicating mouse input)
+    const hasMouse = window.matchMedia("(hover: hover)").matches;
+
+    if (!hasMouse) {
+      // Hide cursor elements on touch devices
+      document.querySelector("[data-cursor-dot]").style.display = "none";
+      document.querySelector("[data-cursor-outline]").style.display = "none";
+      return;
+    }
+
     const cursorDot = document.querySelector("[data-cursor-dot]");
     const cursorOutline = document.querySelector("[data-cursor-outline]");
 
@@ -35,8 +45,14 @@ const CursorHandler = ({ children }) => {
 
   return (
     <>
-      <div data-cursor-dot className="cursor-dot hidden"></div>
-      <div data-cursor-outline className="cursor-outline  blur-md"></div>
+      <div
+        data-cursor-dot
+        className="cursor-dot hidden sm:block"
+      ></div>
+      <div
+        data-cursor-outline
+        className="cursor-outline blur-md hidden sm:block"
+      ></div>
       {children}
     </>
   );

@@ -141,14 +141,16 @@ const Header = () => {
                   Resume
                 </Link>
               </li>
+              {/* updated here */}
               <li className='inline-flex justify-center items-center gap-2 bg-[#6576] w-[80px] h-[40px] rounded-xl hover:bg-[#6576aa] transition-colors duration-300'>
                 <a
                   href='https://github.com/CodeBoyD7/vasu-portfolio'
                   target='_blank'
+
                   rel='noopener noreferrer'
                   className='group relative flex items-center gap-1'
                 >
-                  <Github className='w-5 h-5' />
+                  <Github className='w-5 h-5 ' />
                   <Star className='text-yellow-300 group-hover:text-yellow-500 group-hover:scale-110 transition-all duration-300 w-5 h-5' />
                   <span className='absolute -top-8 left-1/2 transform -translate-x-1/2 bg-yellow-500 text-black text-xs font-bold px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap'>
                     Star on GitHub

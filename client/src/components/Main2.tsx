@@ -68,7 +68,7 @@ function Main2() {
           </p>
           <div className='flex justify-center space-x-6'>
             <a
-              href='https://github.com/CodeBoyD7/My-Portfolio'
+              href='https://github.com/CodeBoyD7/vasu-portfolio'
               target='_blank'
               rel='noreferrer'
               className='text-gray-300 bg-gray-800 p-2 rounded-full hover:text-purple-500 transition-colors'

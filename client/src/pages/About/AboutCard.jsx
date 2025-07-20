@@ -1,41 +1,42 @@
-import React from "react";
-import { ImPointRight } from "react-icons/im";
+import { ImPointRight } from 'react-icons/im';
 
 function AboutCard() {
   return (
-    <div className="bg-white shadow-lg rounded-lg p-6 quote-card-view">
-      <blockquote className="mb-0">
-        <p className="text-justify leading-relaxed font-bold">
-          Hi Everyone, I am{" "}
-          <span className="text-purple-500">Teja Vasu Yellapu</span> from{" "}
-          <span className="text-purple-500">Andhra Pradesh, India.</span>
-          <br />
-          I am currently a student pursuing an MCA (Master of Computer
-          Application) in Computer Science.
-          <br />I have completed my B.Sc in Computer Science from{" "}
-          <span className="text-purple-500">Andhra University</span>.
+    <div className='bg-white shadow-lg rounded-lg p-6 quote-card-view hover:shadow-xl transition-shadow duration-300'>
+      <blockquote className='mb-0'>
+        <p className='text-justify leading-relaxed font-medium text-gray-400'>
+          Hi Everyone, I am <span className='text-purple-600 font-semibold'>Teja Vasu Yellapu</span>{' '}
+          from <span className='text-purple-600 font-semibold'>Andhra Pradesh, India.</span>
+          <br />I have completed my{' '}
+          <span className='text-purple-600 font-semibold'>
+            MCA (Master of Computer Applications)
+          </span>{' '}
+          in Computer Science.
+          <br />I hold a B.Sc in Computer Science from{' '}
+          <span className='text-purple-600 font-semibold'>Andhra University</span>.
           <br />
           <br />
           Apart from coding, here are some other activities that I love to do:
         </p>
-        <ul className="list-disc list-inside mt-4">
-          <li className="about-activity flex items-center">
-            <ImPointRight className="mr-2" /> Working with different Operating
-            Systems
+        <ul className='mt-4 space-y-2'>
+          <li className='about-activity flex items-start'>
+            <ImPointRight className='mt-1 mr-2 flex-shrink-0 text-purple-500' />
+            <span>Working with different Operating Systems and exploring their architectures</span>
           </li>
-          <li className="about-activity flex items-center">
-            <ImPointRight className="mr-2" /> Being socially active
+          <li className='about-activity flex items-start'>
+            <ImPointRight className='mt-1 mr-2 flex-shrink-0 text-purple-500' />
+            <span>Being socially active and mentoring junior developers</span>
           </li>
-          <li className="about-activity flex items-center">
-            <ImPointRight className="mr-2" /> Learning new technologies
+          <li className='about-activity flex items-start'>
+            <ImPointRight className='mt-1 mr-2 flex-shrink-0 text-purple-500' />
+            <span>Learning and experimenting with new technologies</span>
           </li>
         </ul>
-        <p className="text-purple-600 mt-4 text-3xl font-extrabold">
-          "Strive to build things that make a difference!"
+        <p className='text-purple-700 mt-6 text-2xl sm:text-3xl font-bold italic'>
+          "Strive to build solutions that make a meaningful impact!"
         </p>
-        <footer className="blockquote-footer text-right">
-          {" "}
-          <span className="text-purple-500 font-bold mr-2 w-1/4">-</span> Vasu
+        <footer className='text-right mt-4'>
+          <span className='text-purple-600 font-semibold'>— Vasu</span>
         </footer>
       </blockquote>
     </div>

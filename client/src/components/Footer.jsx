@@ -1,51 +1,65 @@
-import React from "react";
-import { Github, Instagram, Linkedin } from "lucide-react";
+import { Github, Instagram, Linkedin } from 'lucide-react';
+import { SiFiverr } from 'react-icons/si';
 
 function Footer() {
   const date = new Date();
   const year = date.getFullYear();
 
   return (
-    <footer className="bg-[#381658] py-8 text-center md:text-left w-full  bottom-0">
-      <div className="container mx-auto px-6 lg:px-12">
-        <div className="flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
+    <footer className='bg-[#381658] py-8 w-full'>
+      <div className='container mx-auto px-4 sm:px-6 lg:px-8'>
+        <div className='flex flex-col md:flex-row justify-between items-center gap-6'>
           {/* Designed By Section */}
-          <div className="w-full md:w-1/3 text-white">
-            <h3 className="text-lg font-semibold">
-              Designed and Developed by Teja Vasu
+          <div className='text-center md:text-left w-full md:w-auto'>
+            <h3 className='text-base sm:text-lg font-medium text-white/90 hover:text-white transition-colors'>
+              Designed and Developed by <span className='font-semibold'>Teja Vasu</span>
             </h3>
           </div>
 
           {/* Copyright Section */}
-          <div className="w-full md:w-1/3 text-white">
-            <h3 className="text-lg font-semibold">&copy; {year} D7</h3>
+          <div className='text-center md:text-left w-full md:w-auto'>
+            <h3 className='text-base sm:text-lg font-medium text-white/90 hover:text-white transition-colors'>
+              &copy; {year} <span className='font-semibold'>D7</span>
+            </h3>
           </div>
 
           {/* Social Media Links */}
-          <div className="w-full md:w-1/3 flex justify-center md:justify-end space-x-6">
+          <div className='flex justify-center md:justify-end space-x-4 sm:space-x-6 w-full md:w-auto'>
             <a
-              href="https://github.com/CodeBoyD7/My-Portfolio"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-white hover:text-purple-500 transition-colors "
+              href='https://github.com/CodeBoyD7/vasu-portfolio/'
+              target='_blank'
+              rel='noopener noreferrer'
+              className='text-white/80 hover:text-purple-400 transition-colors duration-300'
+              aria-label='GitHub'
             >
-              <Github size={28} />
+              <Github size={24} className='w-6 h-6 sm:w-7 sm:h-7' />
             </a>
             <a
-              href="https://www.linkedin.com/in/teja-vasu-yellapu-a198a4233/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-white hover:text-purple-500 transition-colors"
+              href='https://www.linkedin.com/in/teja-vasu-yellapu-a198a4233/'
+              target='_blank'
+              rel='noopener noreferrer'
+              className='text-white/80 hover:text-blue-400 transition-colors duration-300'
+              aria-label='LinkedIn'
             >
-              <Linkedin size={28} />
+              <Linkedin size={24} className='w-6 h-6 sm:w-7 sm:h-7' />
             </a>
             <a
-              href="https://www.instagram.com/_vasu_d7/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-white hover:text-purple-500 transition-colors"
+              href='https://www.instagram.com/_vasu_d7/'
+              target='_blank'
+              rel='noopener noreferrer'
+              className='text-white/80 hover:text-pink-500 transition-colors duration-300'
+              aria-label='Instagram'
             >
-              <Instagram size={28} />
+              <Instagram size={24} className='w-6 h-6 sm:w-7 sm:h-7' />
+            </a>
+            <a
+              href='https://www.fiverr.com/tejavasu_deva/'
+              target='_blank'
+              rel='noopener noreferrer'
+              className='text-white/80 hover:text-green-400 transition-colors duration-300'
+              aria-label='Fiverr'
+            >
+              <SiFiverr size={28} className='w-6 h-6 sm:w-7 sm:h-7' />
             </a>
           </div>
         </div>

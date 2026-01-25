@@ -2,7 +2,7 @@ import axios from 'axios';
 import { useCallback, useEffect, useState } from 'react';
 import { FaSpinner } from 'react-icons/fa';
 import ProjectCard from './ProjectCards';
-
+console.log(import.meta.env.VITE_APP_API_URL);
 function Projects() {
   const [projects, setProjects] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -12,9 +12,7 @@ function Projects() {
 
   const fetchProjects = useCallback(async () => {
     try {
-      const { data } = await axios.get(
-        'https://vasu-portfolio.onrender.com/getProjects' || 'http://localhost:3000/getProjects'
-      );
+      const { data } = await axios.get(`${import.meta.env.VITE_APP_API_URL}/getProjects`);
 
       const projectData = data.projects.data;
 

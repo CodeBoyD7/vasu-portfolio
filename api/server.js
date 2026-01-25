@@ -1,45 +1,52 @@
-import express from "express";
-import cors from "cors";
-import { getCollections } from "./db.js"; // Ensure this path is correct
-import dotenv from "dotenv";
-import path from "path";
+
+
+import cors from 'cors';
+import dotenv from 'dotenv';
+import express from 'express';
+import { getCollections } from './config/db.js';
+
 dotenv.config();
 
 const app = express();
+
+// CORS — frontend only
 app.use(
   cors({
     origin: [
-      "http://localhost:3000",
-      "http://localhost:5173",
-      "https://vasu-portfolio.onrender.com",
+      'http://localhost:5173',
+      process.env.FRONTEND_URL, // 👈 your Vercel frontend
     ],
+    credentials: true,
   })
 );
-app.use(express.json());
-const __dirname = path.resolve();
 
-app.get("/getProjects", async (req, res) => {
+app.use(express.json());
+
+// API route
+app.get('/getProjects', async (req, res) => {
   try {
     const projects = await getCollections();
-    if (projects.length === 0) {
-      return res
-        .status(404)
-        .json({ message: "No projects found", success: false });
-    }
-    res.status(200).json({ projects, success: true });
+
+    res.status(200).json({
+      success: true,
+      projects,
+    });
   } catch (error) {
-    console.error(error); // Log the error for debugging
-    res.status(500).json({ message: error.message, success: false });
+    console.error(error);
+    res.status(500).json({
+      success: false,
+      message: error.message,
+    });
   }
 });
-app.use(express.static(__dirname + "/client/dist"));
 
-app.get("*", (req, res) => {
-  res.sendFile(__dirname + "/client/dist/index.html");
+// Health check (IMPORTANT for Render)
+app.get('/', (req, res) => {
+  res.send('Portfolio API is running');
 });
-const PORT = process.env.PORTSERVER;
-// Start the server and analyze schema
-app.listen(PORT, async () => {
-  await getCollections(); // Wait for schema analysis to complete
-  console.log("Server started on port : ", PORT);
+
+const PORT = process.env.PORTSERVER || 10000;
+
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
 });
